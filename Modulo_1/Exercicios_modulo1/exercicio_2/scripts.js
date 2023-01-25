@@ -1,3 +1,3 @@
- console.log(" Isso é uma string aspas duplas");
- console.log(' Isso é uma string aspas simples');
- console.log(` Isso é uma string templete literais ${2+5}`);
+console.log(1);
+console.log(10.5);
+console.log((3*(6+9))/8);
