@@ -1,7 +1,5 @@
-let str = "String";
-let num = 2;
-let  verdade = true;
+let i = 0
 
-console.log( str);
-console.log(num);
-console.log(verdade);
+while (i<=10) {
+    console.log(i++)
+}

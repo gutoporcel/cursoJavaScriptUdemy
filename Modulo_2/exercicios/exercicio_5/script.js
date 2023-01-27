@@ -1,7 +1,9 @@
-let str = "String";
-let num = 2;
-let  verdade = true;
+let velo = 70
+;
 
-console.log( str);
-console.log(num);
-console.log(verdade);
+if (velo>80) {
+    console.log(`voce  foi multado sua velocidade é: ${velo}KM/h maxima permitida e de 80 km/h`);
+}else{
+
+    console.log(`Você não foi multado esta abaxo de 80km/h sua velocidade é de ${velo}KM/h`);
+}

@@ -1,7 +1,12 @@
-let str = "String";
-let num = 2;
-let  verdade = true;
+let result;
 
-console.log( str);
-console.log(num);
-console.log(verdade);
+for (let i = 0; i <= 50; i++) {
+    result = i%2; 
+    if (result==0) {
+        console.log(`É par ${i} `); 
+    }else{
+        console.log(`É impar ${i} `);
+    }
+
+}
+

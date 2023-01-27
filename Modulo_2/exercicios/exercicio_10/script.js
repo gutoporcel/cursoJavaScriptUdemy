@@ -1,7 +1,8 @@
-let str = "String";
-let num = 2;
-let  verdade = true;
+let num =4;
+if (num%num === 0 ) {
+    console.log(`Este é numero primo ${num}`);
+}else {
+    console.log(`Este não é numero primo ${num}`);
+}
 
-console.log( str);
-console.log(num);
-console.log(verdade);
+
