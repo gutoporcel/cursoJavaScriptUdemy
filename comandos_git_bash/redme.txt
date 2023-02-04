@@ -1,0 +1,86 @@
+                    guia guit hub
+
+video  refrenciado https://www.youtube.com/watch?v=Zwv9qRyVeU4
+
+git init // quando quer começar um projeto  que vamos  versionar
+
+
+
+git pull //  atualiza o projeto  do remoto para o local
+
+git status  // verifca  o status //
+
+git add . //adiciona
+
+git commit -a -m " descriçao breve do commit" // commitar o projeto  
+
+git push // subir o projeto///
+
+
+//criaçao de branch   
+
+    git checkout -b "minhaNovaBreanch" // comando para criar nova Breanch
+    git commit -a -m " comentario da nova branch"
+    git push //  subir nova branch
+//
+
+// alterando entre as branch criadas
+
+ git checkout nomeBranch
+// 
+// fazendo um merge
+    git checkout nomeBranch //esta na que  vai entra o merge
+    git branch // para  ter certeza em qual  branch eu to
+    git merge nomeBranch //merge que vai se enviado para o principal
+    git push
+//
+
+
+
+//excluir uma branch
+ git branch -d nomeBranch
+//
+
+
+como clonar um projeto no git
+
+    git clone URL do projeto no fim  da url  da um espçao e coloca o nome da sua preferencia para diferenciar
+
+
+    ideal quando voce  clona um projeto mudar de branch para  codar
+//
+
+ excluir um arquivo do projeto que nao quero
+
+git clean -f 
+
+
+ voltar para o ultimo commit 
+ git checkout .\nomeDoArquivo.HTML
+
+
+ git log  //mostra todos so commits  criados
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
