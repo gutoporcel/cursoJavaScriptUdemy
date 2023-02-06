@@ -1,20 +1,10 @@
-let pessoa  = {
-"nome":"jose",
-"sobrenome":"augusto",
-"idade":25,
-"profissao":"montador",
-"estudante":true,
-"hobbies":["Video game","leitura","correr"]
+let onibus = {
+'rodas':8,
+'passageiros':40,
+'portas':2
 }
 
-let pessoTexto = JSON.stringify(pessoa);
-//vira uma string
-console.log(pessoTexto);
-
-let pessoaJSON = JSON.parse(pessoTexto);
-
-console.log(pessoaJSON);
-console.log(pessoaJSON.hobbies[0]);
-
-
-
+console.log(onibus);
+console.log(onibus.passageiros);
+console.log(onibus.portas);
+console.log(onibus.rodas);
