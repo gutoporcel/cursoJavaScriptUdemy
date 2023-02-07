@@ -1,12 +1,13 @@
-let onibus = {
-'rodas':8,
-'passageiros':40,
-'portas':2
+let nomes =["jose","joao","cris","lucas"];
+
+for (let i = 0; i < nomes.length; i++) {
+    if ("joao" == nomes[i]) {
+        console.log("Seu nome é "+nomes[i]);
+        
+    }
+    
 }
-onibus.janelas=20;
-//console.log(onibus.includes("janelas"));
-console.log(onibus.janelas);
-console.log(onibus.portas);
-delete onibus.rodas;
-console.log(onibus.rodas);
-console.log(onibus);
+
+if(nomes.includes("jose")){
+    console.log("O nome foi encontrado");
+}
