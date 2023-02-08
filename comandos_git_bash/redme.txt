@@ -38,8 +38,9 @@ git push // subir o projeto///
 
 
 //excluir uma branch
- git branch -d nomeBranch
-//
+ git branch -d nomeBranch //  loca 
+ $ git push origin --delete teste //remoto
+/
 
 
 como clonar um projeto no git
