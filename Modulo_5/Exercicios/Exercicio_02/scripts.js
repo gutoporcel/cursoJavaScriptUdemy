@@ -1,6 +1,6 @@
 class Carrinho {
 
-    constructor (itens,qtd=0,valor=0){
+    constructor (itens,qtd,valor){
 
         this.itens = itens;
         this.qtd = qtd;
@@ -9,105 +9,68 @@ class Carrinho {
 
     }
 
-    adicionaItens(itens,qtd,valor) {
-       
-        this.itens = itens;
-        this.qtd = qtd;
-        this.valor = valor;
-
-     // this.getItens = new Carrinho(this.getItens,this.getQtd,this.getValor);
-        console.log (" iten: " + itens + " quantidade: "+ qtd + " valor total: "+ valor);
+    adicionaItens(item) {
+        let contador = 0; 
       
-    }
+        for (let itemCarrinho in this.itens){
+            if(this.itens[itemCarrinho].id == item.id){
+              this.itens[itemCarrinho].qtd += item.qtd; 
+              contador = 1;
 
-    RemoveItens(itens){
+            }
+        }
 
-        if (this.itens == itens) {
+        if(contador == 0){
 
-            delete this.itens;
-            delete this.qtd;
-            delete this.valor;
-
-          
-        }else{
-
-            
-            console.log ("inten invalido ou sem inten");
+            this.itens.push(item);
 
         }
 
+        this.qtd += item.qtd;
+        this.valorTotal += item.preco * item.qtd;
+
     }
-    
+    removeItem(item){
+
+        for (let itemCarrinho in this.itens){
+            if(this.itens[itemCarrinho].id == item.id){
+
+              let obj = this.itens[itemCarrinho];
+              let index  = this.itens.findIndex(function(obj){return obj.id == item.id});
+              
+              this.qtd -= this.itens[itemCarrinho].qtd;
+              this.valorTotal -= this.itens[itemCarrinho].preco *this.itens[itemCarrinho].qtd;
+            
+              this.itens.splice(index, 1);
+            }
+        }
+
+
+
+
+    }
+
 }
-
-let compra = new Carrinho();
-
-console.log(compra);
+let compra = new Carrinho([{
     
-compra.adicionaItens("ovo",30,25);
+    id:01,
+    nome:"camiseta",
+    qtd:1,
+    preco:20   
+},
+{
+    id:02,
+    nome:"calça",
+    qtd:2,
+    preco:50 
+}    
+
+],3,120);
+
 console.log(compra);
-compra.adicionaItens("ovo2",30,25);
+compra.adicionaItens({id:03,nome:"camisa",qtd:2,preco:20});
 console.log(compra);
-compra.adicionaItens("ovo3",30,25);
+compra.adicionaItens({id:05,nome:"bone",qtd:1,preco:15});
 console.log(compra);
-compra.RemoveItens("ovo");
+compra.removeItem({id:03,nome:"camisa",qtd:1,preco:20});
 console.log(compra);
-compra.adicionaItens("ovo3",30,25);
-console.log(compra);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    get getItens(){
-
-        return this.itens;
-
-    }
-
-    set setItens (itens){
-
-        this.itens = itens;
-
-    }
-//
-    get getQtd(){
-
-        return this.qtd;
-
-    }
-
-    set setQtd (qtd){
-
-        this.qtd = qtd;
-
-    }
-//
-    get getValor(){
-
-        return this.valor;
-    }
-
-    set setValor (valor){
-
-        this.valor = valor;
-
-    }
-  /*  ValorTotal(){
-        return  this.getQtd * this.getValor;
-
-    }
-    */
