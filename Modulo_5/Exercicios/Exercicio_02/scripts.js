@@ -1,10 +1,10 @@
 class Carrinho {
 
-    constructor (itens,qtd,valor){
+    constructor (itens,qtd,valorTotal){
 
         this.itens = itens;
         this.qtd = qtd;
-        this.valor =valor
+        this.valorTotal =valorTotal
      
 
     }
@@ -56,7 +56,7 @@ let compra = new Carrinho([{
     id:01,
     nome:"camiseta",
     qtd:1,
-    preco:20   
+    preco:50   
 },
 {
     id:02,
@@ -68,9 +68,9 @@ let compra = new Carrinho([{
 ],3,120);
 
 console.log(compra);
-compra.adicionaItens({id:03,nome:"camisa",qtd:2,preco:20});
+compra.adicionaItens({id:03,nome:"camisa",qtd:2,preco:50});
 console.log(compra);
-compra.adicionaItens({id:05,nome:"bone",qtd:1,preco:15});
+compra.adicionaItens({id:05,nome:"bone",qtd:1,preco:100});
 console.log(compra);
-compra.removeItem({id:03,nome:"camisa",qtd:1,preco:20});
+compra.removeItem({id:03,nome:"camisa",qtd:2,preco:50});
 console.log(compra);
