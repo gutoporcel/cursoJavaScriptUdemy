@@ -1,7 +1,7 @@
 
 class ContaBanco{
 
-    constructor(saldoc,saldop, jurosp=0.01 ){
+    constructor(saldoc,saldop, jurosp=0.010 ){
         this.saldoc = saldoc;
         this.saldop = saldop;
         this.jurosp = jurosp;
@@ -46,7 +46,7 @@ class ContaBanco{
 */
 
             this.setSaldoP =(this.getSaldoP + valor) ;
-            this.setJurosP =(this.getSaldoP * this.getJurosP * 30);
+            this.setJurosP =(this.getSaldoP * this.getJurosP * 30);//perido de 30 dias 
             this.setSaldoP =(this.getSaldoP + this.getJurosP) ;
             console.log("O deposito foi de: R$"+valor +"\nO saldo da sua cota poupança é: R$" + this.getSaldoP);
             
@@ -92,36 +92,41 @@ class ContaBanco{
 }
 
 class especial  extends ContaBanco{
-    constructor(saldoc,saldop,jurosp = 0.02){
-       // super(saldoc,saldoc);
-       // super(saldop,saldop);
-        super(jurosp,jurosp);
+    constructor(saldocn,saldopn,jurospex = 0.020){
+        super(saldocn,saldopn,jurospex);
+        //this.jurospex = jurospex;
+    
+    
     }
 
 
 }
-let contaEx =new especial(200,200);
+let contaEx =new especial(0,0);
 
-let conta = new ContaBanco(100,100);
+let conta = new ContaBanco(0,0);
 
 
-
+console.log("//////////////////////////////////")
 console.log(conta);
-console.log(contaEx);
+
 
 conta.depositoConta("poupança",100); 
 conta.depositoConta("corrente",100 );
 conta.transferecia(50);
+console.log(conta);
 
 /*conta.saque("corrente",20);
 conta.saque("poupança",20);
 conta.saque("poupança",140);
 conta.saque("poupança",130);
 conta.depositoConta("poupança",100);*/
+
+console.log("//////////////////////////////////");
+console.log(contaEx);
 contaEx.depositoConta("poupança",100); 
 contaEx.depositoConta("corrente",100 );
-contaEx.transferecia(10);
-
+contaEx.transferecia(50);
+console.log(contaEx);
 
 
     
