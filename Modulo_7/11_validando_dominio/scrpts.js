@@ -7,3 +7,4 @@ console.log(validaDominio.test("ww.amon.com"));//false
 console.log(validaDominio.test("amon.com"));//false
 console.log(validaDominio.test("amon.com.br"));//true
 console.log(validaDominio.test("ww.amon.com.br"));//false
+console.log(validaDominio.test("ww.amon.com.br"));//false
