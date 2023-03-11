@@ -3,11 +3,11 @@ let lista = document.createElement("ul");
 
 
 
-for (let i=0; i<5; i++) {
+for (let i=0; i<=5; i++) {
     
     let item = document.createElement("li");
 
-    let texto = document.createElement("texto lista"+i);
+    let texto = document.createTextNode("Texto lista " + i);
 
     item.appendChild(texto);
   
