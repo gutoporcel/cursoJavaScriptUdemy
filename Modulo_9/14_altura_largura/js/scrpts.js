@@ -1,4 +1,4 @@
-elemento = document.querySelector("#titulo-principal");
+let elemento = document.querySelector("#titulo-principal");
 
 console.log("Largura: " + elemento.offsetWidth);// considera as bordas
 console.log("Altura: " +elemento.offsetHeight);
