@@ -87,10 +87,10 @@ function checkEL(player1,player2){
 
         if(b1child == "x" && b2child == "x" && b3child == "x"){
             // x
-            alert("x venceu");
+            declareWinner("x");
         }else if (b1child == "o" && b2child == "o" && b3child == "o"){
             //o
-            alert("o venceu");
+            declareWinner("o");
         }
 
     }
@@ -103,10 +103,10 @@ function checkEL(player1,player2){
 
         if(b4child == "x" && b5child == "x" && b6child == "x"){
             // x
-            alert("x venceu");
+            declareWinner("x");
         }else if (b4child == "o" && b5child == "o" && b6child == "o"){
             //o
-            alert("o venceu");
+            declareWinner("o");
         }
 
     }
@@ -119,10 +119,10 @@ function checkEL(player1,player2){
 
         if(b7child == "x" && b8child == "x" && b9child == "x"){
             // x
-            alert("x venceu");
+            declareWinner("x");
         }else if (b7child == "o" && b8child == "o" && b9child == "o"){
             //o
-            alert("o venceu");
+            declareWinner("o");
         }
 
     }
@@ -135,10 +135,10 @@ function checkEL(player1,player2){
 
         if(b1child == "x" && b4child == "x" && b7child == "x"){
             // x
-            alert("x venceu");
+            declareWinner("x");
         }else if (b1child == "o" && b4child == "o" && b7child == "o"){
             //o
-            alert("o venceu");
+            declareWinner("o");
         }
 
     }
@@ -151,10 +151,10 @@ function checkEL(player1,player2){
 
         if(b2child == "x" && b5child == "x" && b8child == "x"){
             // x
-            alert("x venceu");
+            declareWinner("x");
         }else if (b2child == "o" && b5child == "o" && b8child == "o"){
             //o
-            alert("o venceu");
+            declareWinner("o");
         }
 
     }
@@ -167,10 +167,10 @@ function checkEL(player1,player2){
 
         if(b3child == "x" && b6child == "x" && b9child == "x"){
             // x
-            alert("x venceu");
+            declareWinner("x");
         }else if (b3child == "o" && b6child == "o" && b9child == "o"){
             //o
-            alert("o venceu");
+            declareWinner("o");
         }
 
     }
@@ -185,10 +185,10 @@ function checkEL(player1,player2){
 
         if(b1child == "x" && b5child == "x" && b9child == "x"){
             // x
-            alert("x venceu");
+            declareWinner("x");
         }else if (b1child == "o" && b5child == "o" && b9child == "o"){
             //o
-            alert("o venceu");
+            declareWinner("o");
         }
 
     }
@@ -201,10 +201,10 @@ function checkEL(player1,player2){
 
         if(b3child == "x" && b5child == "x" && b7child == "x"){
             // x
-            alert("x venceu");
+            declareWinner("x");
         }else if (b3child == "o" && b5child == "o" && b7child == "o"){
             //o
-            alert("o venceu");
+            declareWinner("o");
         }
 
     }
@@ -220,12 +220,61 @@ function checkEL(player1,player2){
 
         if(conter == 9){
 
-            alert("deu velha");
+            declareWinner("deu velha");
         }
     }
 
+ }
 
 
+ //limpa jogo, declara vencedor e atualiza placar.
 
+ function declareWinner(winner){
+
+    let scoreboardx = document.querySelector("#scoreboard-1");
+    let scoreboardy = document.querySelector("#scoreboard-2");
+    let msg = "";
+
+    if (winner == "x"){
+
+        scoreboardx.textContent =parseInt(scoreboardx.textContent)+1;
+        msg= "jogador 1 venceu!";
+    }else if(winner == "o"){
+
+        scoreboardy.textContent =parseInt(scoreboardy.textContent)+1;
+        msg= "jogador 2 venceu!";
+    }else{
+
+        msg = "deu velha";
+    }
+
+
+    //exibe msg
+
+
+    messageText.innerHTML = msg;
+    messagContainer.classList.remove("hide");
+
+    //esconde msg   
+
+    setTimeout(function(){
+
+        messagContainer.classList.add("hide");
+
+    },3000);
+    //zera jogada
+    player1 = 0;
+    player2 = 0;
+
+    //rem,ove x e o
+
+    let boxeToRemove = document.querySelectorAll(".box div");
+
+    for (let i=0; i < boxeToRemove.length;i++){
+
+        boxeToRemove[i].parentNode.removeChild(boxeToRemove[i]);
+
+
+    }
 
  }
