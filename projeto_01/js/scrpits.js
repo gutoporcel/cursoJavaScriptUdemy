@@ -27,6 +27,14 @@ for (let i = 0; i< boxes.length;i++){
     
             if(player1 == player2){
                 player1++;
+
+                if(secondPlayer == "ai-player"){
+                   
+                    //funçao executar a jogada
+                    computerPlay();
+                    player2++;
+
+                }
     
             }else{
     
@@ -37,18 +45,36 @@ for (let i = 0; i< boxes.length;i++){
 
             checkWinCondition();
     
-    
-    
-
-
         }
 
-      
+    });
+
+}
+
+//evendo para saber se é dois player ou IA
+
+for(let i =0; i <buttons.length; i++){
+
+    buttons[i].addEventListener("click",function() {
+       
+        secondPlayer =  this.getAttribute("id");
+
+        for (let j = 0; j < buttons.length; j++) {
+            buttons[j].style.display ="none";
+        }
+
+        setTimeout(function(){
+            let container = document.querySelector("#container");
+            container.classList.remove("hide")
+
+        },500);
+
 
     });
 
 
 }
+
 
 //  Ver quem vai jogar
 
@@ -276,5 +302,40 @@ function checkEL(player1,player2){
 
 
     }
+
+ }
+
+ //executar a logica da IA
+
+ function computerPlay(){
+
+    let cloneO = o.cloneNode(true);
+    counter =0 ;
+    filled = 0;
+
+    for (let i = 0; i < boxes.length; i++) {
+        
+        let ramdomNumber = Math.floor(Math.random() * 5);
+        // so prenche se o filho estiver vazio
+        if (boxes[i].childNodes[0] == undefined) {
+            if(ramdomNumber <= 1){
+                boxes[i].appendChild(cloneO);
+                counter++;
+                break;
+
+            }
+
+            //checagemde quantas esta prenchidas
+            
+        }else{
+            filled++
+        }
+        
+    }
+
+    if ( counter == 0 && filled <9){
+
+        computerPlay();
+    } 
 
  }
