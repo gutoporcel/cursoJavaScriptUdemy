@@ -35,8 +35,4 @@ app.get('/',(req,res)=>{
 
 app.use('/jobs',require('./routes/jobs'));
 
-
-
-//jobs routes
-
-app.use('/jobs',require('./routes/jobs'));
+//fim   
