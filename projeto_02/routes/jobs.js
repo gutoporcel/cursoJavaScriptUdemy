@@ -7,7 +7,9 @@ const Job     = require('../models/Job');
 router.get('/test',(req, res)=>{
     res.send('deu certo')
 })
-
+router.get('/add',(req, res)=>{
+    res.render('add');
+})
 
 //add JOb via post
 router.post('/add',(req, res)=>{
