@@ -67,3 +67,4 @@ git clean -f
 servidor nodemon como ativar no projeto 02
 
 comando: npm run dev
+npm install

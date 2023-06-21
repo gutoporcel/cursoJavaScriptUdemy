@@ -6,7 +6,22 @@ const Job     = require('../models/Job');
 //rota de teste
 router.get('/test',(req, res)=>{
     res.send('deu certo')
-})
+});
+
+//detalhe da vaga =>  view/a view/2
+router.get('/view/:id', (req, res)=> Job.findOne({
+    where:{id: req.params.id}
+}.then(Job =>{
+
+    res.render('view', {
+
+        Job
+    });
+}).catch(err => console.log(err))));
+
+
+
+// form da rota de envio
 router.get('/add',(req, res)=>{
     res.render('add');
 })
